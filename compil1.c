@@ -1,8 +1,9 @@
 #include <stdio.h>
 
-int main() {
-    printf("Hello world\n");//Il manquait un ; a la ligne 4 c'est pour cela qu'il y'avait une erreur avec le return
+int main() { 
+    printf("Hello world\n");  //expected ';' before 'return' Il manquait un ; cest pour cela que le code ne se compilait pas
 
     return 0;
+
 
 }
