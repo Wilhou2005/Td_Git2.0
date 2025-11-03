@@ -9,6 +9,6 @@ int main() {
     {
         tableau[j] = 1;
     }
-    printf("OK %d\n", tableau[5]);
+    printf("OK %d\n", tableau[4]);//Si on avait laisser tableau[5] cela n'aurait pas marcher car ça aurait été hors limite donc il faut mettre 4
     return 0;
 }
