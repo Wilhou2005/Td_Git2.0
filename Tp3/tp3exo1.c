@@ -8,7 +8,7 @@ int main() {
     scanf("%d", &n);
 
     while (n < 5 || n > 10) {
-        printf("Valeur incorrecte. Donnez une taille entre 5 et 10 : ");
+        printf("Valeur incorrecte,entrez une taille entre 5 et 10 : ");
         scanf("%d", &n);
     }
 
