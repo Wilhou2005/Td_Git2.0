@@ -23,6 +23,32 @@ int main() {
         }
     }
 
+    int mid = width / 2;
+
+    for (int i = 0; i < n; i++) {
+        int left = mid - i;
+        int right = mid + i;
+
+        for (int j = 0; j < width; j++) {
+
+            if (i < n - 1) {
+                if (j == left || j == right)
+                    img[i][j] = 'A';
+                else if (j > left && j < right)
+                    img[i][j] = 'S';
+            }
+
+            else {
+                img[i][j] = '_';
+
+                if (j == left || j == right)
+                    img[i][j] = 'A';
+                else if (j > left && j < right)
+                    img[i][j] = 'S';
+            }
+        }
+    }
+
     for (int i = 0; i < max_height; i++) {
         for (int j = 0; j < width; j++) {
             printf("%c", img[i][j]);
