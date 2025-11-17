@@ -37,15 +37,35 @@ int main() {
                 else if (j > left && j < right)
                     img[i][j] = 'S';
             }
-
             else {
                 img[i][j] = '_';
-
                 if (j == left || j == right)
                     img[i][j] = 'A';
                 else if (j > left && j < right)
                     img[i][j] = 'S';
             }
+        }
+    }
+
+    int top = n;
+    int left = 0;
+    int right = width - 1;
+
+    for (int j = 0; j < width; j++) {
+        if (j == left || j == right)
+            img[top][j] = '.';
+        else
+            img[top][j] = 'S';
+    }
+
+    for (int i = top + 1; i < top + n; i++) {
+        left++;
+        right--;
+        for (int j = 0; j < width; j++) {
+            if (j == left || j == right)
+                img[i][j] = '.';
+            else if (j > left && j < right)
+                img[i][j] = 'S';
         }
     }
 
