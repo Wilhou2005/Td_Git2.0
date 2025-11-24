@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void afficherMenu(void) {
+int afficherMenu() {
     printf("===== GESTION DE NOTES =====\n");
     printf("1. Saisir le nombre d'eleves\n");
     printf("2. Saisir les notes des eleves\n");
@@ -10,16 +10,8 @@ void afficherMenu(void) {
     printf("5. Afficher la moyenne generale\n");
     printf("6. Afficher la meilleure note de chaque controle\n");
     printf("0. Quitter\n");
-}
-
-int lirechoix(void) {
-    int choix;
-    scanf("%d",&choix);
-    return choix;
-}
-
-int main(void) {
-    afficherMenu();
-    int choix = lirechoix();
+   
     return 0;
+
 }
+

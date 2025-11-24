@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/33787/Documents/TD_Git2.0/Td_Git2.0/Tp4",
-      "program": "c:/Users/33787/Documents/TD_Git2.0/Td_Git2.0/Tp4/build/Debug/outDebug",
+      "cwd": "c:/Users/33787/Documents/TD_Git2.0/Td_Git2.0/TP4",
+      "program": "c:/Users/33787/Documents/TD_Git2.0/Td_Git2.0/TP4/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
