@@ -65,10 +65,40 @@ int afficherNotes(float notes[30][3], int nb) {
 }
 
 float calculerMoyenneEleve(float notes[30][3], int indice_eleve){
-    float total;
+    float total=0;
     total += notes[indice_eleve][0] + notes[indice_eleve][1] + notes[indice_eleve][2];
     return total/3;
 }
+
+float calculerMoyenneGeneral(float notes[30][3],int nb){
+    float total=0;
+    for (int i = 0; i < nb; i++)
+    {
+        for (int j = 0; j < 3; j++)
+        {
+            total+=notes[i][j];
+            
+        }
+    
+    }
+    return total/(nb*3);
+
+    
+}
+void meilleurnote(float notes[30][3],int nb){
+    float total=0;
+    for (int i = 0; i < nb; i++)
+    {
+        for (int j = 0; j < 3; j++)
+        {
+            total+=notes[i][j];
+            
+        }
+    
+    }
+    
+}
+
 
 int main() {
     float notes[30][3];
@@ -80,7 +110,10 @@ int main() {
     int indice_eleve;
     printf("Entrez l'indice de l'eleve: ");
     scanf("%i",&indice_eleve);
-    printf("%f",calculerMoyenneEleve(notes,indice_eleve-1));
+    printf("%f\n",calculerMoyenneEleve(notes,indice_eleve-1));
+    int moyenne;
+    printf("Moyenne general:%f",calculerMoyenneGeneral(notes,nb));
     return 0;
+    
 }
 
