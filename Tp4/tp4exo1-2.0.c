@@ -85,17 +85,25 @@ float calculerMoyenneGeneral(float notes[30][3],int nb){
 
     
 }
-void meilleurnote(float notes[30][3],int nb){
-    float total=0;
+void meilleursnotes(float notes[30][3],int nb){
+    float meilleures[]={0.0f,0.0f,0.0f};
     for (int i = 0; i < nb; i++)
     {
         for (int j = 0; j < 3; j++)
         {
-            total+=notes[i][j];
+            if(notes[i][j] >= meilleures[j]){
+                meilleures[j]=notes[i][j];
+            };
             
         }
     
     }
+    for (int j = 0; j < 3; j++)
+        {
+            printf("Pour le controle %d la meilleure note est %f\n", j, meilleures[j]);
+            
+        }
+
     
 }
 
@@ -112,7 +120,8 @@ int main() {
     scanf("%i",&indice_eleve);
     printf("%f\n",calculerMoyenneEleve(notes,indice_eleve-1));
     int moyenne;
-    printf("Moyenne general:%f",calculerMoyenneGeneral(notes,nb));
+    printf("Moyenne general:%f\n",calculerMoyenneGeneral(notes,nb));
+    meilleursnotes(notes,nb);
     return 0;
     
 }
