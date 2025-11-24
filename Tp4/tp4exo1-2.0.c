@@ -30,7 +30,7 @@ int saisirnombreeleves() {
     return n;
 }
 
-int saisirNotes(int nb) {
+int saisirNotes(int notes[30][3], int nb) {
     int i;
     int j;
     int note;
@@ -43,15 +43,33 @@ int saisirNotes(int nb) {
                 printf("Note du controle %d (0 a 20) : ", j + 1);
                 scanf("%d",&note);
             }
+            notes[i][j] = note;
         }
     }
     return 0;
 }
 
+int afficherNotes(int notes[30][3], int nb) {
+    int i;
+    int j;
+    printf("Tableau des notes\n");
+    printf("Eleve  C1  C2  C3\n");
+    for (i = 0; i < nb; i++) {
+        printf("%d  ", i + 1);
+        for (j = 0; j < 3; j++) {
+            printf("%d  ", notes[i][j]);
+        }
+        printf("\n");
+    }
+    return 0;
+}
+
 int main() {
+    int notes[30][3];
     afficherMenu();
     int choix = lirechoix();
     int nb = saisirnombreeleves();
-    saisirNotes(nb);
+    saisirNotes(notes, nb);
+    afficherNotes(notes, nb);
     return 0;
 }
