@@ -12,7 +12,14 @@ void afficherMenu(void) {
     printf("0. Quitter\n");
 }
 
+int lirechoix(void) {
+    int choix;
+    scanf("%d",&choix);
+    return choix;
+}
+
 int main(void) {
     afficherMenu();
+    int choix = lirechoix();
     return 0;
 }
