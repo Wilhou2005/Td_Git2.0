@@ -30,9 +30,28 @@ int saisirnombreeleves() {
     return n;
 }
 
+int saisirNotes(int nb) {
+    int i;
+    int j;
+    int note;
+    for (i = 0; i < nb; i++) {
+        printf("Eleve %d :\n", i + 1);
+        for (j = 0; j < 3; j++) {
+            printf("Note du controle %d (0 a 20) : ", j + 1);
+            scanf("%d",&note);
+            while (note < 0 || note > 20) {
+                printf("Note du controle %d (0 a 20) : ", j + 1);
+                scanf("%d",&note);
+            }
+        }
+    }
+    return 0;
+}
+
 int main() {
     afficherMenu();
     int choix = lirechoix();
     int nb = saisirnombreeleves();
+    saisirNotes(nb);
     return 0;
 }
