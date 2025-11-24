@@ -10,8 +10,29 @@ int afficherMenu() {
     printf("5. Afficher la moyenne generale\n");
     printf("6. Afficher la meilleure note de chaque controle\n");
     printf("0. Quitter\n");
-   
     return 0;
-
 }
 
+int lirechoix() {
+    int choix;
+    scanf("%d",&choix);
+    return choix;
+}
+
+int saisirnombreeleves() {
+    int n;
+    printf("Nombre d'eleves (1-30) : ");
+    scanf("%d",&n);
+    while (n < 1 || n > 30) {
+        printf("Nombre d'eleves (1-30) : ");
+        scanf("%d",&n);
+    }
+    return n;
+}
+
+int main() {
+    afficherMenu();
+    int choix = lirechoix();
+    int nb = saisirnombreeleves();
+    return 0;
+}
