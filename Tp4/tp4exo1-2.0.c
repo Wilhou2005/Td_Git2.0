@@ -30,18 +30,18 @@ int saisirnombreeleves() {
     return n;
 }
 
-int saisirNotes(int notes[30][3], int nb) {
+int saisirNotes(float notes[30][3], int nb) {
     int i;
     int j;
-    int note;
+    float note;
     for (i = 0; i < nb; i++) {
         printf("Eleve %d :\n", i + 1);
         for (j = 0; j < 3; j++) {
             printf("Note du controle %d (0 a 20) : ", j + 1);
-            scanf("%d",&note);
+            scanf("%f",&note);
             while (note < 0 || note > 20) {
                 printf("Note du controle %d (0 a 20) : ", j + 1);
-                scanf("%d",&note);
+                scanf("%f",&note);
             }
             notes[i][j] = note;
         }
@@ -49,7 +49,7 @@ int saisirNotes(int notes[30][3], int nb) {
     return 0;
 }
 
-int afficherNotes(int notes[30][3], int nb) {
+int afficherNotes(float notes[30][3], int nb) {
     int i;
     int j;
     printf("Tableau des notes\n");
@@ -57,19 +57,30 @@ int afficherNotes(int notes[30][3], int nb) {
     for (i = 0; i < nb; i++) {
         printf("%d  ", i + 1);
         for (j = 0; j < 3; j++) {
-            printf("%d  ", notes[i][j]);
+            printf("%f  ", notes[i][j]);
         }
         printf("\n");
     }
     return 0;
 }
 
+float calculerMoyenneEleve(float notes[30][3], int indice_eleve){
+    float total;
+    total += notes[indice_eleve][0] + notes[indice_eleve][1] + notes[indice_eleve][2];
+    return total/3;
+}
+
 int main() {
-    int notes[30][3];
+    float notes[30][3];
     afficherMenu();
     int choix = lirechoix();
     int nb = saisirnombreeleves();
     saisirNotes(notes, nb);
     afficherNotes(notes, nb);
+    int indice_eleve;
+    printf("Entrez l'indice de l'eleve: ");
+    scanf("%i",&indice_eleve);
+    printf("%f",calculerMoyenneEleve(notes,indice_eleve-1));
     return 0;
 }
+
