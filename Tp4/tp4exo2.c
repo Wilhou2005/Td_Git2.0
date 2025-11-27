@@ -34,7 +34,7 @@ void calcul_distribution(int montant) {
 
     int nb5 = reste / 5;
 
-    printf("Billets distribues :\n");
+    printf("Billets distribuer :\n");
     printf("%d billets de 50 euros\n", nb50);
     printf("%d billets de 20 euros\n", nb20);
     printf("%d billets de 10 euros\n", nb10);
@@ -45,17 +45,25 @@ int main() {
 
     int choix = 0;
 
-    afficher_menu();
-    printf("Votre choix : ");
-    scanf("%d", &choix);
+    while (choix != 2) {
 
-    if (choix == 1) {
-        int montant = saisir_montant();
-        if (montant_valide(montant) == 1) {
-            calcul_distribution(montant);
-        } else {
-            printf("Erreur : montant invalide.\n");
-            printf("Le montant doit etre entre 5 et 1000 euros, divisible par 5.\n");
+        afficher_menu();
+        printf("Votre choix : ");
+        scanf("%d", &choix);
+
+        if (choix == 1) {
+
+            int montant = saisir_montant();
+
+            if (montant_valide(montant) == 1) {
+                calcul_distribution(montant);
+            } else {
+                printf("Erreur : montant invalide.\n");
+                printf("Le montant doit etre entre 5 et 1000 euros, divisible par 5.\n");
+            }
+        }
+        else if (choix != 2) {
+            printf("Choix invalide.\n");
         }
     }
 
