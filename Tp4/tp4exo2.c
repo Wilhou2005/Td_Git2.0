@@ -1,28 +1,34 @@
 #include <stdio.h>
-#include <stdlib.h>
 
-void afficher_menu() {
+void menu_affichage() {
+
     printf("=== BANQUE - DISTRIBUTEUR ===\n");
+
     printf("1 - Faire un retrait\n");
+
     printf("2 - Quitter\n");
+
 }
 
-int saisir_montant() {
-    int m;
+ 
+
+int demander_retrait() {
+
+    int saisie;
+
     printf("Montant a retirer : ");
-    scanf("%d",&m);
-    return m;
+
+    scanf("%d", &saisie);
+
+    return saisie;
+
 }
 
-int main() {
-    int choix;
-    afficher_menu();
-    printf("Votre choix : ");
-    scanf("%d",&choix);
-
-    if (choix == 1) {
-        int m = saisir_montant();
+int montant_correct(int valeur) {
+    if ( (valeur >= 5) && (valeur <= 1000) && (valeur % 5 == 0) ) {
+        return 1;
     }
 
     return 0;
+
 }
